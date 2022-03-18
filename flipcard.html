@@ -13,13 +13,12 @@
     .card {
       width: 169px;
       height: 169px;
-      filter: drop-shadow(0px 4px 32px rgba(0, 0, 0, 0.12));
+      border-radius: 20px;
+      box-shadow: 0px 4px 32px rgba(0,0,0,.12);
       transform: scale(1);
       position: relative;
-      perspective: 1000px;
       transform-style: preserve-3d;
       transition: transform .5s;
-      backface-visibility: hidden;
     }
     .card:hover {
       cursor: pointer;
@@ -31,20 +30,18 @@
     .card.flip {
       transform: rotateY(180deg);
     }
-    .front-face {
+    .front-face, .back-face {
       position: absolute;
-      background: url('images/r-card1.svg');
-      /* perspective: 1000px; */
-      /* transform-style: preserve-3d;
-      transition: transform .5s;
-      backface-visibility: hidden; */
-      /* transform: rotateY(180deg); */
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+    }
+    .front-face {
+      background-image: url("images/r-card1.svg");
+      transform: rotateY(180deg);
     }
     .back-face {
-      position: absolute;
-      background: url('images/card1.svg');
-      /* backface-visibility: hidden; */
-      transform: rotateY(180deg);
+      background-image: url("images/card1.svg");
     }
   </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -59,10 +56,12 @@
   </script> -->
   <!-- <script src="script.js"></script> -->
   <body>
-    <div class="card 1">
-      <div class="card front-face"></div>
-      <div class="card back-face"></div>
-    </div>
+    <section class="memory-game">
+      <div class="card 1">
+        <div class="front-face"></div>
+        <div class="back-face"></div>
+      </div>
+    </section>
     <script src="script.js"></script>
   </body>
 </html>
