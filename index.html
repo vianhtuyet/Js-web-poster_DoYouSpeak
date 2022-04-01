@@ -3,9 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>Интерактивный веб-плакат Do You Speak</title>
-    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="content.css">
   </head>
-  <style media="screen">
+  <!-- <style media="screen">
     body {
       width: 1024px;
       margin: 0 auto;
@@ -177,9 +180,9 @@
       height: 24px;
       background: url('images/logo.svg');
     }
-  </style>
+  </style> -->
   <body>
-    <div class="cards">
+    <!-- <div class="cards">
       <div class="card r1"></div>
       <div class="card r2"></div>
       <div class="card r3"></div>
@@ -214,13 +217,332 @@
         </div>
       </div>
     </div>
-    <!-- <div class="footer">
-      <div class="name">vi anh tuyet</div>
-      <div class="logo">
-        <img src="images/logo.svg" alt="">
+    <div class="footer">
+      <div class="rectangle">
+        <div class="nameandlogo">
+          <div class="name">vi anh tuyet</div>
+          <div class="logo"></div>
+        </div>
       </div>
-      <div class="rectangle"></div>
     </div> -->
+
+
+    <div class="startscreen" id="ss1">
+      <div class="strelka1"></div>
+      <div class="task">
+        Убери карточки, на которых картинка не соотносится со словом
+      </div>
+    </div>
+    <div class="startscreen hidden" id="ss2">
+      <div class="strelka2"></div>
+      <div class="poluchi">
+        Получи подсказку
+      </div>
+      <div class="uberi">
+        Нажми,
+         <br>если карточка оказалась неправильной
+      </div>
+      <div class="buttonstart">
+        <div class="start">start</div>
+      </div>
+    </div>
+    <div class="phon"></div>
+    <section class="cards">
+      <div class="card" id="n1">
+        <div class="front-face" id="f1">
+          <div class="keyandremove">
+            <div class="key" id="k1">?</div>
+            <div class="remove" id="r1">x</div>
+          </div>
+          <div class="word" id="w1">car</div>
+          <div class="language">английский</div>
+        </div>
+        <!-- <div class="back-face"></div> -->
+      </div>
+      <div class="card" id="n2">
+        <div class="front-face" id="f2">
+          <div class="keyandremove">
+            <div class="key" id="k2">?</div>
+            <div class="remove" id="r2">x</div>
+          </div>
+          <div class="word" id="w2">lápiz</div>
+          <div class="language">испанский</div>
+        </div>
+        <!-- <div class="back-face"></div> -->
+      </div>
+      <div class="card" id="n3">
+        <div class="front-face" id="f3">
+          <div class="keyandremove">
+            <div class="key" id="k3">?</div>
+            <div class="remove" id="r3">x</div>
+          </div>
+          <div class="word" id="w3">熊</div>
+          <div class="language">китайский</div>
+        </div>
+        <!-- <div class="back-face"></div> -->
+      </div>
+      <div class="card" id="n4">
+        <div class="front-face" id="f4">
+          <div class="keyandremove">
+            <div class="key" id="k4">?</div>
+            <div class="remove" id="r4">x</div>
+          </div>
+          <div class="word" id="w4">chiave</div>
+          <div class="language">итальянский</div>
+        </div>
+        <!-- <div class="back-face"></div> -->
+      </div>
+      <div class="card" id="n5">
+        <div class="front-face" id="f5">
+          <div class="keyandremove">
+            <div class="key" id="k5">?</div>
+            <div class="remove" id="r5">x</div>
+          </div>
+          <div class="word" id="w5">orasan</div>
+          <div class="language">филиппинский</div>
+        </div>
+        <!-- <div class="back-face"></div> -->
+      </div>
+      <div class="card" id="n6">
+        <div class="front-face" id="f6">
+          <div class="keyandremove">
+            <div class="key" id="k6">?</div>
+            <div class="remove" id="r6">x</div>
+          </div>
+          <div class="word" id="w6">鍵</div>
+          <div class="language" id="l6">японский</div>
+        </div>
+        <!-- <div class="back-face"></div> -->
+      </div>
+      <div class="card" id="n7">
+        <div class="front-face" id="f7">
+          <div class="keyandremove">
+            <div class="key" id="k7">?</div>
+            <div class="remove" id="r7">x</div>
+          </div>
+          <div class="word" id="w7">kẹo</div>
+          <div class="language" id="l7">вьетнамский</div>
+        </div>
+        <!-- <div class="back-face"></div> -->
+      </div>
+      <div class="card" id="n8">
+        <div class="front-face" id="f8">
+          <div class="keyandremove">
+            <div class="key" id="k8">?</div>
+            <div class="remove" id="r8">x</div>
+          </div>
+          <div class="word" id="w8">가위</div>
+          <div class="language" id="l8">корейский</div>
+        </div>
+        <!-- <div class="back-face"></div> -->
+      </div>
+      <div class="card" id="n9">
+        <div class="front-face" id="f9">
+          <div class="keyandremove">
+            <div class="key" id="k9">?</div>
+            <div class="remove" id="r9">x</div>
+          </div>
+          <div class="word" id="w9">şemsiye</div>
+          <div class="language" id="l9">турецкий</div>
+        </div>
+        <!-- <div class="back-face"></div> -->
+      </div>
+      <div class="card" id="n10">
+        <div class="front-face" id="f10">
+          <div class="keyandremove">
+            <div class="key" id="k10">?</div>
+            <div class="remove" id="r10">x</div>
+          </div>
+          <div class="word" id="w10">balloon</div>
+          <div class="language" id="l10">английский</div>
+        </div>
+        <!-- <div class="back-face"></div> -->
+      </div>
+      <div class="card" id="n11">
+        <div class="front-face" id="f11">
+          <div class="keyandremove">
+            <div class="key" id="k11">?</div>
+            <div class="remove" id="r11">x</div>
+          </div>
+          <div class="word" id="w11">nudle</div>
+          <div class="language" id="l11">чешский</div>
+        </div>
+        <!-- <div class="back-face"></div> -->
+      </div>
+      <div class="card" id="n12">
+        <div class="front-face" id="f12">
+          <div class="keyandremove">
+            <div class="key" id="k12">?</div>
+            <div class="remove" id="r12">x</div>
+          </div>
+          <div class="word" id="w12">蘋果</div>
+          <div class="language" id="l12">китайский</div>
+        </div>
+        <!-- <div class="back-face"></div> -->
+      </div>
+      <div class="card" id="n13">
+        <div class="front-face" id="f13">
+          <div class="keyandremove">
+            <div class="key" id="k13">?</div>
+            <div class="remove" id="r13">x</div>
+          </div>
+          <div class="word" id="w13">nouilles</div>
+          <div class="language" id="l13">французский</div>
+        </div>
+        <!-- <div class="back-face"></div> -->
+      </div>
+      <div class="card" id="n14">
+        <div class="front-face" id="f14">
+          <div class="keyandremove">
+            <div class="key" id="k14">?</div>
+            <div class="remove" id="r14">x</div>
+          </div>
+          <div class="word" id="w14">saat</div>
+          <div class="language" id="l14">турецкий</div>
+        </div>
+        <!-- <div class="back-face"></div> -->
+      </div>
+      <div class="card" id="n15">
+        <div class="front-face" id="f15">
+          <div class="keyandremove">
+            <div class="key" id="k15">?</div>
+            <div class="remove" id="r15">x</div>
+          </div>
+          <div class="word" id="w15">太陽</div>
+          <div class="language" id="l15">японский</div>
+        </div>
+        <!-- <div class="back-face"></div> -->
+      </div>
+      <div class="card" id="n16">
+        <div class="front-face" id="f16">
+          <div class="keyandremove">
+            <div class="key" id="k16">?</div>
+            <div class="remove" id="r16">x</div>
+          </div>
+          <div class="word" id="w16">水</div>
+          <div class="language" id="l16">японский</div>
+        </div>
+        <!-- <div class="back-face"></div> -->
+      </div>
+      <div class="card" id="n17">
+        <div class="front-face" id="f17">
+          <div class="keyandremove">
+            <div class="key" id="k17">?</div>
+            <div class="remove" id="r17">x</div>
+          </div>
+          <div class="word" id="w17">dveře</div>
+          <div class="language" id="l17">чешский</div>
+        </div>
+        <!-- <div class="back-face"></div> -->
+      </div>
+      <div class="card" id="n18">
+        <div class="front-face" id="f18">
+          <div class="keyandremove">
+            <div class="key" id="k18">?</div>
+            <div class="remove" id="r18">x</div>
+          </div>
+          <div class="word" id="w18">drzwi</div>
+          <div class="language" id="l18">польский</div>
+        </div>
+        <!-- <div class="back-face"></div> -->
+      </div>
+      <div class="card" id="n19">
+        <div class="front-face" id="f19">
+          <div class="keyandremove">
+            <div class="key" id="k19">?</div>
+            <div class="remove" id="r19">x</div>
+          </div>
+          <div class="word" id="w19">regnbue</div>
+          <div class="language" id="l19">датский</div>
+        </div>
+        <!-- <div class="back-face"></div> -->
+      </div>
+      <div class="card" id="n20">
+        <div class="front-face" id="f20">
+          <div class="keyandremove">
+            <div class="key" id="k20">?</div>
+            <div class="remove" id="r20">x</div>
+          </div>
+          <div class="word" id="w20">auge</div>
+          <div class="language" id="l20">немецкий</div>
+        </div>
+        <!-- <div class="back-face"></div> -->
+      </div>
+      <div class="card" id="n21">
+        <div class="front-face" id="f21">
+          <div class="keyandremove">
+            <div class="key" id="k21">?</div>
+            <div class="remove" id="r21">x</div>
+          </div>
+          <div class="word" id="w21">cipő</div>
+          <div class="language" id="l21">венгерский</div>
+        </div>
+        <!-- <div class="back-face"></div> -->
+      </div>
+      <div class="card" id="n22">
+        <div class="front-face" id="f22">
+          <div class="keyandremove">
+            <div class="key" id="k22">?</div>
+            <div class="remove" id="r22">x</div>
+          </div>
+          <div class="word" id="w22">아이스크림</div>
+          <div class="language" id="l22">корейский</div>
+        </div>
+        <!-- <div class="back-face"></div> -->
+      </div>
+      <div class="card" id="n23">
+        <div class="front-face" id="f23">
+          <div class="keyandremove">
+            <div class="key" id="k23">?</div>
+            <div class="remove" id="r23">x</div>
+          </div>
+          <div class="word" id="w23">στόμα</div>
+          <div class="language" id="l23">греческий</div>
+        </div>
+        <!-- <div class="back-face"></div> -->
+      </div>
+      <div class="card" id="n24">
+        <div class="front-face" id="f24">
+          <div class="keyandremove">
+            <div class="key" id="k24">?</div>
+            <div class="remove" id="r24">x</div>
+          </div>
+          <div class="word" id="w24">ลูกบอล</div>
+          <div class="language" id="l24">тайский</div>
+        </div>
+        <!-- <div class="back-face"></div> -->
+      </div>
+      <div class="card" id="n25">
+        <div class="front-face" id="f25">
+          <div class="keyandremove">
+            <div class="key" id="k25">?</div>
+            <div class="remove" id="r25">x</div>
+          </div>
+          <div class="word" id="w25">bear</div>
+          <div class="language" id="l25">английский</div>
+        </div>
+        <!-- <div class="back-face"></div> -->
+      </div>
+    </section>
+    <div class="progressbar">
+    <div class="bar">
+      <div class="progress">
+        <div class="pr hidden" id="pr1"></div>
+        <div class="pr hidden" id="pr2"></div>
+        <div class="pr hidden" id="pr3"></div>
+        <div class="pr hidden" id="pr4"></div>
+        <div class="pr hidden" id="pr5"></div>
+        <div class="pr hidden" id="pr6"></div>
+        <div class="pr hidden" id="pr7"></div>
+        <div class="pr hidden" id="pr8"></div>
+        <div class="pr hidden" id="pr9"></div>
+        <div class="pr hidden" id="pr10"></div>
+      </div>
+      <div class="buttondone">
+        <div class="done">done</div>
+      </div>
+    </div>
+  </div>
     <div class="footer">
       <div class="rectangle">
         <div class="nameandlogo">
@@ -229,5 +551,19 @@
         </div>
       </div>
     </div>
+    <div class="finalscreen hidden">
+      <div class="finally">
+        Молодец! <br> Держи конфетку
+      </div>
+      <div class="buttonrestart">
+        <div class="start">restart</div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script> -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
